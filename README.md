@@ -12,7 +12,7 @@ A GPT implementation purely using Apple's MLX framework, adapted from Andrej Kar
 pip install -e
 ```
 
-2.  Train the model
+2.  Train the model on tinyshakespeare dataset
 ```bash
-python gpt_example.py
+python train_gpt_shakespeare.py
 ```
