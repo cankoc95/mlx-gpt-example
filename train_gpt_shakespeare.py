@@ -1,3 +1,7 @@
+#
+# Script for training a GPT model on TinyShakespeare dataset purely using MLX.
+#
+
 import model.gpt as gpt
 
 import pathlib
@@ -144,4 +148,3 @@ def main(config: gpt.GPTConfig):
 if __name__ == "__main__":
     config = gpt.GPTConfig(block_size=block_size, vocab_size=vocab_size, n_heads=n_heads, n_embd=n_embd, n_layers=n_layers, dropout=dropout)
     main(config)
-

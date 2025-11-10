@@ -1,3 +1,7 @@
+# 
+# MLX GPT implementation based on Andrej Karpathy's GPT Tutorial.
+#
+
 import dataclasses
 import model.transformer as transformer
 import mlx.core as mx
