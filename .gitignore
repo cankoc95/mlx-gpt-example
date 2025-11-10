@@ -6,7 +6,5 @@
 .venv
 .env
 
-.python-version
-
 # pycache
 __pycache__
