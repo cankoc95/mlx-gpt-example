@@ -10,6 +10,7 @@ import numpy as np
 
 @dataclasses.dataclass
 class GPTConfig:
+    """ GPT config """
     block_size: int
     vocab_size: int
     n_heads: int
@@ -53,6 +54,14 @@ class GPTLanguageModel(nn.Module):
         return logits
     
     def generate(self, idx, max_new_tokens):
+        """
+        Autoregressive generate function for automatically generating next token upto max_new_tokens.
+
+        idx: Current context indices array of shape (B, T)
+        max_new_tokens: Maximum number of new tokens to generate.
+
+        :returns: Generated indices of shape (B, T + max_new_tokens)
+        """
         # idx is (B, T) array of indices in the current context
         rng = np.random.default_rng()
         for _ in range(max_new_tokens):
@@ -71,4 +80,5 @@ class GPTLanguageModel(nn.Module):
             # idx_next = mx.argmax(probs, axis=-1, keepdims=True) # (B, 1)
             # append sampled index to the running sequence
             idx = mx.concat((idx, idx_next), axis=1) # (B, T+1)
+
         return idx
