@@ -151,13 +151,6 @@ class Block(nn.Module):
         x = x + self.ffwd(self.ln2(x))
         return x
 
-@dataclasses.dataclass
-class GPTConfig:
-    n_embd: int
-    dropout: float
-    n_heads: int
-    n_layers: int
-
 class GPTLanguageModel(nn.Module):
     """ GPT Model"""
     def __init__(self):
